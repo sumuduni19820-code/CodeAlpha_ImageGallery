@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <!-- Header (දෙවෙනි පින්තූරයේ ආකාරයට) -->
+        <header>
+            <h1>Image Gallery</h1>
+            <p>Explore high-quality visual content</p>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls-bar">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="nature">Nature</button>
+                <button class="filter-btn" data-category="wallpaper">Wallpaper & Art</button>
+                <button class="filter-btn" data-category="travel">Travel & People</button>
+                <button class="filter-btn" data-category="animals">Animals</button>
+                <button class="filter-btn" data-category="uploaded">Uploaded Images</button>
+            </div>
+
+            <div class="action-buttons">
+                <label for="imageUploader" class="btn-upload">
+                    <i class="fas fa-plus-circle"></i> Add New Image
+                </label>
+                <input type="file" id="imageUploader" accept="image/*">
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <main class="gallery-container" id="galleryGrid">
+            
+            <!-- 1. Butterfly (Nature) -->
+            <div class="gallery-item" data-category="nature">
+                <img src="img1.jpg" alt="Butterfly on flower">
+                <div class="item-overlay">
+                    <span class="tag">Nature</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+            
+            <!-- 2. Sprouted seeds in shell (Nature) -->
+            <div class="gallery-item" data-category="nature">
+                <img src="img2.jpg" alt="Sprouted Seeds">
+                <div class="item-overlay">
+                    <span class="tag">Nature</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 3. Girl standing in path (Travel & People) -->
+            <div class="gallery-item" data-category="travel">
+                <img src="img3.jpg" alt="Girl in Nature Path">
+                <div class="item-overlay">
+                    <span class="tag">Travel & People</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 4. Wall frame art collage (Wallpaper & Art) -->
+            <div class="gallery-item" data-category="wallpaper">
+                <img src="img4.jpg" alt="Wall Art Frames">
+                <div class="item-overlay">
+                    <span class="tag">Wallpaper & Art</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 5. Fantasy Floating Island (Nature / Wallpaper) -->
+            <div class="gallery-item" data-category="nature">
+                <img src="img5.jpg" alt="Floating Waterfall Island">
+                <div class="item-overlay">
+                    <span class="tag">Nature</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 6. Gallery wall exhibition (Wallpaper & Art) -->
+            <div class="gallery-item" data-category="wallpaper">
+                <img src="img6.jpg" alt="Gallery Exhibition">
+                <div class="item-overlay">
+                    <span class="tag">Wallpaper & Art</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 7. Tiger (Animals) -->
+            <div class="gallery-item" data-category="animals">
+                <img src="img7.jpg" alt="Tiger">
+                <div class="item-overlay">
+                    <span class="tag">Animals</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 8. Couple riding bicycles (Travel & People) -->
+            <div class="gallery-item" data-category="travel">
+                <img src="img8.jpg" alt="Couple on Bicycles">
+                <div class="item-overlay">
+                    <span class="tag">Travel & People</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 9. Golden Retriever Dog (Animals) -->
+            <div class="gallery-item" data-category="animals">
+                <img src="img9.jpg" alt="Dog in Grass">
+                <div class="item-overlay">
+                    <span class="tag">Animals</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- 10. Garden plants setup (Nature) -->
+            <div class="gallery-item" data-category="nature">
+                <img src="img10.jpg" alt="Garden Plants Setup">
+                <div class="item-overlay">
+                    <span class="tag">Nature</span>
+                    <button type="button" class="view-btn" title="Expand image"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <button class="close-btn" id="closeBtn" type="button" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+            
+            <button class="nav-btn prev-btn" id="prevBtn" type="button" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+            <img class="lightbox-content" id="lightboxImg" src="" alt="Enlarged view">
+            <button class="nav-btn next-btn" id="nextBtn" type="button" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+
+            <div class="caption" id="lightboxCaption"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
