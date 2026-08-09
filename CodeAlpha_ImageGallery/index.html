@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery - CodeAlpha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div class="header">
+        <h1>Image Gallery</h1>
+        <p>Explore high-quality visual content</p>
+    </div>
+
+    <!-- Image Grid Container -->
+    <div class="gallery" id="gallery">
+        <div class="gallery-item"><img src="img1.jpg" alt="Image 1" onclick="openLightbox(0)"></div>
+        <div class="gallery-item"><img src="img2.jpg" alt="Image 2" onclick="openLightbox(1)"></div>
+        <div class="gallery-item"><img src="img3.jpg" alt="Image 3" onclick="openLightbox(2)"></div>
+        <div class="gallery-item"><img src="img4.jpg" alt="Image 4" onclick="openLightbox(3)"></div>
+        <div class="gallery-item"><img src="img5.jpg" alt="Image 5" onclick="openLightbox(4)"></div>
+        <div class="gallery-item"><img src="img6.jpg" alt="Image 6" onclick="openLightbox(5)"></div>
+        <div class="gallery-item"><img src="img7.jpg" alt="Image 7" onclick="openLightbox(6)"></div>
+        <div class="gallery-item"><img src="img8.jpg" alt="Image 8" onclick="openLightbox(7)"></div>
+        <div class="gallery-item"><img src="img9.jpg" alt="Image 9" onclick="openLightbox(8)"></div>
+        <div class="gallery-item"><img src="img10.jpg" alt="Image 10" onclick="openLightbox(9)"></div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Popup Image">
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
